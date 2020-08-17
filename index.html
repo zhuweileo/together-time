@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .days-wrap{
+            text-align: center;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    </style>
+</head>
+<body>
+    <h1 class="days-wrap"><span class="days"></span>天</h1>
+    <script src="./moment.min.js"></script>
+    <script>
+        var start = moment([2020, 4, 10]);
+        var now = moment();
+        var days = now.diff(start, 'days')
+        console.log(days);
+        var el = document.querySelector('.days');
+        el.textContent = days;
+    </script>
+</body>
+</html>
